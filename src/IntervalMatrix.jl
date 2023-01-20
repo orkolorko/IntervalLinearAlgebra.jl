@@ -25,9 +25,8 @@ function IntervalMatrix(A::AbstractMatrix{Interval{T}}) where {T<:Real}
     return IntervalMatrix(mA, rA)
 end
 
-function *(::MultiplicationType{:fast},
-            A::IntervalMatrix{T},
-            B::IntervalMatrix{T}) where {T<:Real}
+function *(A::IntervalMatrix{T},
+           B::IntervalMatrix{T}) where {T<:Real}
     
     mA, rA = midpoint_radius(A)
     mB, rB = midpoint_radius(B)
@@ -46,9 +45,8 @@ function *(::MultiplicationType{:fast},
     return IntervalMatrix(Interval.(Cinf, Csup))
 end
 
-function *(::MultiplicationType{:fast},
-    A::AbstractMatrix{T},
-    B::IntervalMatrix{T}) where {T<:Real}
+function *(A::AbstractMatrix{T},
+            B::IntervalMatrix{T}) where {T<:Real}
 
     mB, rB = midpoint_radius(B)
 
@@ -66,8 +64,7 @@ function *(::MultiplicationType{:fast},
     return IntervalMatrix(Interval.(Cinf, Csup))
 end
 
-function *(::MultiplicationType{:fast},
-    A::IntervalMatrix{T},
+function *(A::IntervalMatrix{T},
     B::AbstractMatrix{T}) where {T<:Real}
 
     mA, rA = midpoint_radius(A)
