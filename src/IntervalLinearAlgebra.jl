@@ -40,6 +40,8 @@ include("pils/affine_expressions.jl")
 include("pils/affine_parametric_array.jl")
 include("pils/pils_solvers.jl")
 
+include("IntervalMatrix.jl")
+
 include("eigenvalues/interval_eigenvalues.jl")
 include("eigenvalues/verify_eigs.jl")
 

@@ -3,10 +3,12 @@ using Test
 
 const IA = IntervalArithmetic
 
+
 include("test_classify.jl")
 include("test_multiplication.jl")
 include("test_utils.jl")
 
+include("test_IntervalMatrix.jl")
 
 include("test_eigenvalues/test_interval_eigenvalues.jl")
 include("test_eigenvalues/test_verify_eigs.jl")
